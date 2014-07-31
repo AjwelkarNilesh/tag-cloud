@@ -1,0 +1,58 @@
+<script type="text/javascript">
+    /*!
+     * Create an array of word objects, each representing a word in the cloud
+     */
+    var word_array = [
+        {text: "Nilesh", weight: 1},
+        {text: "Manoj", weight: 2, link: "http://jquery.com/"},
+        {text: "Pankaj", weight: 3, html: {title: "I can haz any html attribute"}},
+        {text: "Amit", weight: 4},
+        {text: "Rupali", weight: 5},
+        {text: "Minakshi", weight: 6, html: {"class": "vertical"}},
+        {text: "Rashmi", weight: 7},
+        {text: "Deepali", weight: 8, html: {"class": "vertical"}},
+        {text: "Seema", weight: 9},
+        {text: "Rajeshree", weight: 10, html: {"class": "vertical"}}
+// ...as many words as you want
+    ];
+
+    $(function() {
+        // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+        $("#tags-container").jQCloud(word_array);
+    });
+</script>
+
+<style type="text/css">
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .sidebar-nav {
+        padding: 9px 0;
+    }
+
+    @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+            float: none;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    div.jqcloud span.vertical {
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: tb-rl;
+    }
+
+    .centerDiv { width: 60%;
+                 height:200px;
+                 margin: 0 auto;
+               }
+</style>
+
+<%#= @tags_for_cloud %>
+
+
+<div class="well sidebar-nav centerDiv" id="tags-container" style="width: 430px; height: 500px;"></div>
